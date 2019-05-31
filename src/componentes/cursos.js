@@ -1,7 +1,15 @@
 import React from 'react';
 import './cursos.css';
+import swal from 'sweetalert';
+
 class cursos extends React.Component{
+    
+    onClick=(e)=>{
+        swal("Enviado correctamente" ,"", "success");
+    }
     render(){
+
+        
 
         return(
 
@@ -53,7 +61,7 @@ class cursos extends React.Component{
                                                 <input type="file" id="ejemplo_archivo_1"/>
                                             </div>
                             
-                                            <button type="submit" class="btn  btn-small color-boton">Enviar</button>
+                                            <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
                                         </div>
                                 </div>
                                     
@@ -87,7 +95,7 @@ class cursos extends React.Component{
                                                 <input type="file" id="ejemplo_archivo_1"/>
                                             </div>
                             
-                                            <button type="submit" class="btn  btn-small color-boton">Enviar</button>
+                                            <button type="submit" class="btn  btn-small color-boton" onClick={this.onClick}>Enviar</button>
                                         </div>
                                 </div>
                                     

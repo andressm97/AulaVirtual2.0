@@ -42,7 +42,7 @@ onClick=(e)=>{
                HOY</a>
              </h6>
            </div>
-           <div id="collapse1" class="panel-collapse collapse in">
+           <div id="collapse1" class="panel-collapse collapse show">
              <div class="panel-body">
              <div class="list-group-flush">
        
@@ -129,7 +129,19 @@ onClick=(e)=>{
        
            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
              <div class="card-body">
-               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+             <h6>Informacion del curso</h6>
+                <div className="row ml-5">
+                           <div className="col-12">
+                                <h6 className="text-secondary">Profesor: Ceron,Fernando</h6> 
+
+                                <h6 className="text-secondary">Horario: 9:00-11:00 am</h6> 
+                                
+                                <h6 className="text-secondary">Aula: 205</h6>
+
+                                <button type="submit" class="btn  btn-small color-boton" >ver mas</button>
+
+                           </div>
+                </div>                  
              </div>
            </div>
          </div>
@@ -143,7 +155,20 @@ onClick=(e)=>{
            </div>
            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
              <div class="card-body">
-               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <h6>Informacion del curso</h6>
+                <div className="row ml-5">
+                           <div className="col-12">
+                                <h6 className="text-secondary">Profesor: Yañes Duran, Carlos</h6> 
+
+                                <h6 className="text-secondary">Horario: 5:00-10:00 pm</h6> 
+                                
+                                <h6 className="text-secondary">Aula: 202</h6>
+
+                                <button type="submit" class="btn  btn-small color-boton" >ver mas</button>
+
+                           </div>
+                </div>
+                                         
              </div>
            </div>
          </div>
@@ -151,13 +176,13 @@ onClick=(e)=>{
            <div class="card-header" id="headingThree">
              <h5 class="mb-0">
                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                 Calculo V 
+                 Calculo 3
                </button>
              </h5>
            </div>
            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
              <div class="card-body">
-               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                           "esperando datos"
              </div>
            </div>
          </div>

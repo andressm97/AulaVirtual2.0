@@ -11,47 +11,38 @@ class usuario extends React.Component{
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="inputEmail4">Nombres</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nombres"/>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nombres" value="Andres Leonardo" disabled/>
                         </div>
                         <div class="form-group col-md-6">
                         <label for="inputPassword4">Apellido</label>
-                        <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido"/>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido" value="Satornicio Medina " disabled/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Direccion</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"/>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value="av.Marquez de Corpac Mz C Lt 18"/>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"/>
+                        <label for="inputAddress2">Correo Institucional</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" value="andres.satornicio@unmsm.edu.pe" disabled/>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity"/>
+                        <label for="inputCity">Escuela profesional</label>
+                        <input type="text" class="form-control" id="inputCity" value="Ingenieria de Software" disabled/>
                         </div>
                         <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
+                        <label for="inputState">Facultad</label>
+                        <input type="text" class="form-control" id="inputZip" value="Ingeniera de Sistemas e Informatica" disabled/>
+
                         </div>
                         <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip"/>
+                        <label for="inputZip">Codigo</label>
+                        <input type="text" class="form-control" id="inputZip" value="15200227" disabled/>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck"/>
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                   
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
             </form>
         
             </div>

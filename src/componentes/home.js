@@ -122,8 +122,14 @@ class home extends React.Component{
            <li class="nav-item">
              <a class="nav-link" href="#">Mensajes</a>
            </li>
-           <li class="nav-item ">
-             <a class="nav-link " href="/user" > <i class="fas fa-user icono"></i></a>
+           <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fas fa-user icono"></i></a>
+             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/user">mis datos</a>
+          <a class="dropdown-item" href="/">Cerrar Sesion</a>
+          {/* <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a> */}
+        </div>
            </li>
          </ul>
        </div>
