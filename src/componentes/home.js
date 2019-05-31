@@ -68,7 +68,7 @@ class home extends React.Component{
                     {/* <li>
                         <a href="#">About</a>
                     </li> */}
-                    <li>
+                    {/* <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Calendario</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
@@ -81,7 +81,7 @@ class home extends React.Component{
                                 <a href="#">page3</a>
                             </li>
                         </ul> 
-                    </li>
+                    </li> */}
                     <li>
                         <a href="#">Acerca de</a>
                     </li>
