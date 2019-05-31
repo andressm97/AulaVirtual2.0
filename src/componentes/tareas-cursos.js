@@ -2,6 +2,28 @@
 import React from 'react';
 class tareasyCursos extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.state={
+        card:true,
+           };
+    
+     this.onClick= this.onClick.bind(this);
+    // this.onClick2= this.onClick2.bind(this);
+
+}
+
+
+onClick=(e)=>{
+  if(this.state.card){
+      this.setState({
+          card:false,
+      })
+  }
+  
+  
+
+}
     render(){
         return(
 
@@ -24,8 +46,8 @@ class tareasyCursos extends React.Component{
              <div class="panel-body">
              <div class="list-group-flush">
        
-         <a href="#" class="list-group-item list-group-item-action">Presentacion de proyecto</a>
-         <a href="#" class="list-group-item list-group-item-action">Entrega de Tarea IHC</a>
+         <a href="#" class="list-group-item list-group-item-action" >Presentacion de proyecto</a>
+         <a href="#" class="list-group-item list-group-item-action" onClick={this.onClick}>Entrega de Tarea IHC</a>
          <a href="#" class="list-group-item list-group-item-action">Exposicion</a>
          <a href="#" class="list-group-item list-group-item-action disabled">Entrega de Tarea Calculo</a>
        </div>
@@ -41,10 +63,7 @@ class tareasyCursos extends React.Component{
              </h6>
            </div>
            <div id="collapse2" class="panel-collapse collapse">
-             <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-             minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-             commodo consequat.</div>
+             <div class="panel-body">----</div>
            </div>
          </div>
          <div class="panel panel-default">
@@ -55,10 +74,7 @@ class tareasyCursos extends React.Component{
              </h6>
            </div>
            <div id="collapse3" class="panel-collapse collapse">
-             <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-             minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-             commodo consequat.</div>
+             <div class="panel-body">Examen Parcial</div>
            </div>
          </div>
        </div>
@@ -70,15 +86,29 @@ class tareasyCursos extends React.Component{
                        </div>
                
                        <div className="col-6">
+                           {this.state.card?(
                            <div class="card " >
                                <div class="card-body">
-                                   <h5 class="card-title">Card title</h5>
-                                   <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                   <h5 class="card-title">No ha seleccionado una tarea</h5>
+                                   {/* <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                    <a href="#" class="card-link">Card link</a>
-                                   <a href="#" class="card-link">Another link</a>
+                                   <a href="#" class="card-link">Another link</a> */}
                                </div>
                            </div>
+                           ):(
+                            <div class="card " >
+                            <div class="card-body">
+                                <h5 class="card-title">Entrega de Tarea IHC</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Yañez Duran, Carlos</h6>
+                                <p class="card-text">Segunda entrega del proyecto de curso que contiene lo prototipos de medio y alto nivel</p>
+                                <h6 class="card-subtitle mb-2 text-muted texto-color">fecha maxima de entrega: 30/05/19 </h6>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                          </div>
+                           )
+                           }
                        </div>
                </div>
        

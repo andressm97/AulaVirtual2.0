@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import Login from './componentes/login'
 import Home from './componentes/home'
-import Usuario from './componentes/usuario'
+import Usuario2 from './componentes/usuario2'
 import TareasyCursos from './componentes/tareas-cursos'
 
 
@@ -21,6 +21,10 @@ function App() {
         <Route 
             component={()=><Home/>}
             path="/home">
+        </Route>
+        <Route 
+            component={()=><Usuario2/>}
+            path="/user">
         </Route>
         {/* <Route 
             component={()=><Usuario/>}

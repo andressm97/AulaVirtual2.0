@@ -1,47 +1,10 @@
 import React from 'react';
-import './home.css'
-import Tareasycursos from './tareas-cursos';
-import Cursos from './cursos';
 import Usuario from './usuario';
-class home extends React.Component{
-
-    constructor(props){
-        super(props);
-        this.state={
-            aparecer:true,
-            aparecer2:false,
-        };
-        
-        this.onClick= this.onClick.bind(this);
-        this.onClick2= this.onClick2.bind(this);
-
-    }
-
-    onClick=(e)=>{
-        if(this.state.aparecer){
-            this.setState({
-                aparecer:false,
-            })
-        }
-        
-        
-
-    }
-    onClick2=(e)=>{
-        if(!this.state.aparecer){
-            this.setState({
-                aparecer2:true,
-            })
-        }
-        
-        
-
-    }
+class usuario2 extends React.Component{
 
     render(){
         return(
-    
-        <div class="wrapper pr-1 pl-1">
+            <div class="wrapper pr-1 pl-1">
             <nav id="sidebar">
                 <div class="sidebar-header pb-2 pt-2">
                     <img className="imagen" src="http://sistemas.unmsm.edu.pe/assets/fisi/img/logo/logo-fisi-header-2.png"></img>
@@ -123,17 +86,14 @@ class home extends React.Component{
              <a class="nav-link" href="#">Mensajes</a>
            </li>
            <li class="nav-item ">
-             <a class="nav-link " href="/user" > <i class="fas fa-user icono"></i></a>
+             <a class="nav-link " href="#" onClick={this.onClick2}> <i class="fas fa-user icono"></i></a>
            </li>
          </ul>
        </div>
      </nav>
                 
     {/* aquiva */}
-    {this.state.aparecer?(
-    <Tareasycursos></Tareasycursos>
-    ):(<Cursos></Cursos> )}
-
+    <Usuario></Usuario>
     {/* {
         this.state.aparecer2?(
             <Usuario></Usuario>
@@ -147,12 +107,10 @@ class home extends React.Component{
 
             
 
+
+
+
         )
     }
-
-
-
-
-
 }
-export default home;
+export default usuario2;
