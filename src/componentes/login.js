@@ -4,12 +4,7 @@ import DataUsuario from "../json/usuario.json";
 import {browserHistory} from 'react-router-3';
 import swal from 'sweetalert'
 
-const estilo ={
-    'background':'url(http://aulavirtual.sistemas.unmsm.edu.pe/pregrado2017/pluginfile.php/1/theme_essential/slide1image/1528217799/17546853_102071343667142_329104064140981637_o.jpg) no-repeat center center fixed',
-    'background-size':' cover',
-    'height':'100%',
-    'width':'100%'
-};
+
 class login extends React.Component{
     
     constructor(props){
