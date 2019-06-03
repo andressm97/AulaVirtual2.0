@@ -2,7 +2,8 @@ import React from 'react';
 import './login.css'
 import DataUsuario from "../json/usuario.json";
 import {browserHistory} from 'react-router-3';
-import swal from 'sweetalert'
+import swal from 'sweetalert';
+import Home from "./home"
 
 
 class login extends React.Component{
@@ -11,13 +12,18 @@ class login extends React.Component{
         super(props);
         this.state={
             usuario:'',
-            contrasena:''
+            contrasena:'',
+            ingreso:true
         };
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange=this.onChange.bind(this);
         this.onChange2=this.onChange2.bind(this);
+        this.onClick=this.onClick.bind(this);
 
+    }
 
+    onClick=(e)=>{
+        this.setState({ingreso:false});
     }
 
     onSubmit=(e)=>{
@@ -40,7 +46,9 @@ class login extends React.Component{
 
         if (cons==1){
             swal("Ingresando" ,"", "success").then(
-                browserHistory.push('/'+ 'home'))
+                this.setState({
+                    ingreso:false
+                }))
         }
         else{
             swal("Usuario Incorrecto" ,"", "error");
@@ -58,11 +66,18 @@ class login extends React.Component{
 
     }
 
+    componentWillMount(){
+
+
+        
+    }
     
     render(){
         console.log (DataUsuario.login[2].contrasena);
         console.log(DataUsuario.login.length);
         return(
+            <div>
+            {this.state.ingreso?(
             <body className="fondo">
             <div className="">
             
@@ -93,7 +108,8 @@ class login extends React.Component{
             </div>
         
             </div>
-            </body>
+            </body>):(<Home></Home>)}
+            </div>
         )
     }
 

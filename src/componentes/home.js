@@ -16,6 +16,12 @@ class home extends React.Component{
         this.onClick2= this.onClick2.bind(this);
 
     }
+    componentWillMount(){
+        
+    }
+
+
+
 
     onClick=(e)=>{
         if(this.state.aparecer){
