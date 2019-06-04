@@ -66,22 +66,22 @@ class login extends React.Component{
 
     }
 
-    // componentWillMount(){
-    //         fetch('https://back-ihc.herokuapp.com/api/login?email=cweimann@example.org&password=aulavirtual')
-    //         .then( 
+    componentWillMount(){
+            fetch('https://back-ihc.herokuapp.com/api/login?email=cweimann@example.org&password=aulavirtual')
+            .then( 
             
-    //             function(response) {
-    //             return response.json();
-    //             }).then(function(data){
-    //                 console.log(data.programmings);
+                function(response) {
+                return response.json();
+                }).then(function(data){
+                    console.log(data.programmings);
                     
-    //             })
-    //         .catch(function(err) {
-    //             console.log('Fetch Error :-S', err);
-    // });
+                })
+            .catch(function(err) {
+                console.log('Fetch Error :-S', err);
+    });
 
         
-    // }
+     }
     
     render(){
         // console.log (DataUsuario.login[2].contrasena);
