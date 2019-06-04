@@ -66,26 +66,26 @@ class login extends React.Component{
 
     }
 
-    componentWillMount(){
-            fetch('https://back-ihc.herokuapp.com/api/login?email=cweimann@example.org&password=aulavirtual')
-            .then( 
+    // componentWillMount(){
+    //         fetch('https://back-ihc.herokuapp.com/api/login?email=cweimann@example.org&password=aulavirtual')
+    //         .then( 
             
-                function(response) {
-                return response.json();
-                }).then(function(data){
-                    console.log(data);
+    //             function(response) {
+    //             return response.json();
+    //             }).then(function(data){
+    //                 console.log(data.programmings);
                     
-                })
-            .catch(function(err) {
-                console.log('Fetch Error :-S', err);
-    });
+    //             })
+    //         .catch(function(err) {
+    //             console.log('Fetch Error :-S', err);
+    // });
 
         
-    }
+    // }
     
     render(){
-        console.log (DataUsuario.login[2].contrasena);
-        console.log(DataUsuario.login.length);
+        // console.log (DataUsuario.login[2].contrasena);
+        // console.log(DataUsuario.login.length);
         return(
             <div>
             {this.state.ingreso?(
@@ -107,9 +107,9 @@ class login extends React.Component{
                                 <input type="password" className="form-control" placeholder="Contraseña" value={this.state.contrasena} onChange={this.onChange2}></input>
                             </div>
 
-                            <button type="submit" onClick={this.onSubmit} className="btn btn-primary"><i className="fas fa-sign-in-alt"></i>  Ingresar</button>
+                            
                         </form>
-
+                        <button  type="submit" onClick={this.onSubmit} className="btn btn-primary"><i className="fas fa-sign-in-alt"></i> Ingresar</button>
                         <div className="col-12 forgot">
                             <a href="#">Recordar contraseña</a>
                         </div>
