@@ -13,7 +13,8 @@ class login extends React.Component{
         this.state={
             usuario:'',
             contrasena:'',
-            ingreso:true
+            ingreso:true,
+            datos:{}
         };
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange=this.onChange.bind(this);
@@ -27,33 +28,61 @@ class login extends React.Component{
     }
 
     onSubmit=(e)=>{
-        var cons=0;
-        console.log(DataUsuario.login.length)
-        for(let i=0; i< DataUsuario.login.length;i++){
-            console.log("xaddd"+DataUsuario.login[i].usuario);
-            if((DataUsuario.login[i].usuario==this.state.usuario )
-               && (DataUsuario.login[i].contrasena==this.state.contrasena)){
+        let currentComponent = this;
+        fetch('https://back-ihc.herokuapp.com/api/login?email='
+        +this.state.usuario+'@example.org&password='+this.state.contrasena)
+        .then(
+            function(response) {
+                return response.json();
+                }).then(function(data){
+                    if(data.tipo==-1){
+                        swal("Usuario Incorrecto" ,"", "error");
+                    }
+                    else{
+                        console.log(data);
+                        currentComponent.setState({
+                            ingreso:false,
+                            datos:data
 
-                cons=1;
+                        });
+                    }   
+                    
+                    
+                }
+        )       .catch(function(error) {
+            console.log('Fetch Error :-S', error);
+            swal("Usuario Incorrecto" ,"", "error");
+            });
+        
+
+
+        // var cons=0;
+        // console.log(DataUsuario.login.length)
+        // for(let i=0; i< DataUsuario.login.length;i++){
+        //     console.log("xaddd"+DataUsuario.login[i].usuario);
+        //     if((DataUsuario.login[i].usuario==this.state.usuario )
+        //        && (DataUsuario.login[i].contrasena==this.state.contrasena)){
+
+        //         cons=1;
                 
-               }
-             else{
-             }  
+        //        }
+        //      else{
+        //      }  
 
 
                
-        }
+        // }
 
-        if (cons==1){
-            swal("Ingresando" ,"", "success").then(
-                this.setState({
-                    ingreso:false
-                }))
-        }
-        else{
-            swal("Usuario Incorrecto" ,"", "error");
+        // if (cons==1){
+        //     swal("Ingresando" ,"", "success").then(
+        //         this.setState({
+        //             ingreso:false
+        //         }))
+        // }
+        // else{
+        //     swal("Usuario Incorrecto" ,"", "error");
 
-        }
+        // }
 
 
        
@@ -119,7 +148,7 @@ class login extends React.Component{
             </div>
         
             </div>
-            </body>):(<Home></Home>)}
+            </body>):(<Home Datos={this.state.datos}></Home>)}
             </div>
         )
     }

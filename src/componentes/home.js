@@ -45,8 +45,9 @@ class home extends React.Component{
     }
 
     render(){
+        console.log("datos"+this.props.Datos.id)
         return(
-    
+            
         <div class="wrapper pr-1 pl-1">
             <nav id="sidebar">
                 <div class="sidebar-header pb-2 pt-2">

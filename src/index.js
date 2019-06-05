@@ -19,6 +19,9 @@ class Index extends React.Component{
                     component={()=> <Login/>}
                     path="/">
                 </Router>
+                <Router
+                    component path="/home" component={home}
+                ></Router>
 
 
             </Router>
