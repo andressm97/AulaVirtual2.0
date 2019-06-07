@@ -44,11 +44,11 @@ class login extends React.Component {
                         // console.log(data);
 
                         swal("Bienvenido alumno" ,"", "success").then(
-                            browserHistory.push('/home/'+data.usuario_id))
+                            browserHistory.push('/home/'+ data.usuario_id))
                     }
                     else{
                         swal("Bienvenido profesor" ,"", "success").then(
-                            browserHistory.push('/homep/'+data.usuario_id))
+                            browserHistory.push('/homep/'+ data.usuario))
                     }
 
 
