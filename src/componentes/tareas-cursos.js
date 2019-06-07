@@ -25,8 +25,9 @@ onClick=(e)=>{
 
 }
     render(){
+      console.log("hola: "+this.props.cursos)
         return(
-
+            
             <div className="container">      
             <h3>Tareas Pendientes</h3>
             <div className="row">
@@ -118,6 +119,42 @@ onClick=(e)=>{
                        
                        <div className="col-12">
                        <div id="accordion">
+
+          {
+            this.props.cursos.map((curso,i)=>{
+              return(
+                <div class="card">
+                <div class="card-header" id={"headingn"+i} >
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse"  data-target={"#collapsen"+i} aria-expanded="true" aria-controls={"collapsen"+i} >
+                        {curso.curso}
+                    </button>
+                  </h5>
+                </div>
+            
+                <div id={"collapsen"+i}  class="collapse " aria-labelledby={"headingn"+i} data-parent="#accordion">
+                  <div class="card-body">
+                  <h6>Informacion del curso</h6>
+                     <div className="row ml-5">
+                                <div className="col-12">
+                                     <h6 className="text-secondary">{curso.nprofesor+","+ curso.aprofesor}</h6> 
+     
+                                     <h6 className="text-secondary">Horario: 9:00-11:00 am</h6> 
+                                     
+                                     <h6 className="text-secondary">{"Creditos: "+curso.creditos}</h6>
+                                     <h6 className="text-secondary">{"Salon: "+curso.salon}</h6>
+     
+                                     <button type="submit" class="btn  btn-small color-boton" >ver mas</button>
+     
+                                </div>
+                     </div>                  
+                  </div>
+                </div>
+              </div>
+              
+              )
+            })
+          }               
          <div class="card">
            <div class="card-header" id="headingOne">
              <h5 class="mb-0">
@@ -145,47 +182,9 @@ onClick=(e)=>{
              </div>
            </div>
          </div>
-         <div class="card">
-           <div class="card-header" id="headingTwo">
-             <h5 class="mb-0">
-               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                 Interaccion Hombre Computador
-               </button>
-             </h5>
-           </div>
-           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-             <div class="card-body">
-                <h6>Informacion del curso</h6>
-                <div className="row ml-5">
-                           <div className="col-12">
-                                <h6 className="text-secondary">Profesor: Yañes Duran, Carlos</h6> 
-
-                                <h6 className="text-secondary">Horario: 5:00-10:00 pm</h6> 
-                                
-                                <h6 className="text-secondary">Aula: 202</h6>
-
-                                <button type="submit" class="btn  btn-small color-boton" >ver mas</button>
-
-                           </div>
-                </div>
-                                         
-             </div>
-           </div>
-         </div>
-         <div class="card">
-           <div class="card-header" id="headingThree">
-             <h5 class="mb-0">
-               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                 Calculo 3
-               </button>
-             </h5>
-           </div>
-           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-             <div class="card-body">
-                           "esperando datos"
-             </div>
-           </div>
-         </div>
+         
+         
+         
        </div></div>
            </div>
            

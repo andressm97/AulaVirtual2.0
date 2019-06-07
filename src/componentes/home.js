@@ -32,6 +32,7 @@ class home extends React.Component {
                 }).then(function (data) {
                     console.log(data.programmings[0].courses[0].name);
                     data.programmings.forEach(element => {
+<<<<<<< HEAD
                         array[i] = {
                             "creditos": element.courses[0].credit,
                             "ciclo": element.courses[0].cycle,
@@ -39,6 +40,17 @@ class home extends React.Component {
                             "nprofesor": element.teachers[0].name,
                             "aprofesor": element.teachers[0].surname
                         }
+=======
+                    array[i]={    
+                     "creditos":element.courses[0].credit,
+                      "ciclo" :element.courses[0].cycle,
+                      "curso":element.courses[0].name,
+                      "id":element.courses[0].id,
+                       "nprofesor": element.teachers[0].name,
+                        "aprofesor":element.teachers[0].surname,
+                        "salon":element.classroom
+                    }
+>>>>>>> master
                         // array[i]=element.courses[0];   
                         // console.log(array2[i])
                         console.log('[CurrentArray]: ' + array[i]);

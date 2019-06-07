@@ -19,7 +19,7 @@ class menu extends React.Component{
                             {
                                 this.props.cursos.map((curso)=>{
                                    return( <li>
-                                        <a href="" >{curso.curso}</a>
+                                        <a href={"/curso/"+curso.id} >{curso.curso}</a>
                                     </li>)
                                 })
                             } 
