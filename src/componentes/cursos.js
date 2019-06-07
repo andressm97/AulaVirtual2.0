@@ -98,7 +98,7 @@ class cursos extends React.Component{
             <div class="wrapper pr-1 pl-1">
             <Menu cursos={this.state.cursos} alumnoid={this.props.params.alumnoid}></Menu>
             <div className="container">
-            <Navbar></Navbar>
+            <Navbar alumnoid={this.props.params.alumnoid}></Navbar>
             <div className="container">
                  <div className="row m-1">
                     <div className="col-12 ">
@@ -112,7 +112,7 @@ class cursos extends React.Component{
                  <div className="col-12">
                   <p className="fuente-tamano">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue sapien ut faucibus rutrum. Cras semper pharetra libero quis laoreet. Sed eu consequat lectus, nec suscipit urna.</p>
 
-                    <a href="#"><i class="far fa-file-pdf iconopdf"></i> Sylabus</a>
+                    <a href="https://www.unapiquitos.edu.pe/contenido/noticias/descargas/Formato-de-Silabo-UNAP2.pdf" target="_blank"><i class="far fa-file-pdf iconopdf"></i> Sylabus</a>
                  </div>
                 <div className="col-12 mt-3">
                     <h5>Recursos</h5>
@@ -134,11 +134,11 @@ class cursos extends React.Component{
                                 <div class="card-body">
                                 <div className="row">
                                         <div className="col-12">
-                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
+                                             <a href="https://www.fceia.unr.edu.ar/ingsoft/testing-intro-a.pdf" target="_blank"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
 
                                         </div>
                                         <div className="col-12">
-                                            <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 2</a>
+                                            <a href="http://oa.upm.es/40012/1/PFC_JOSE_MANUEL_SANCHEZ_PENO_3.pdf"target="_blank"><i class="fas fa-file iconoArchivo"></i> Documento 2</a>
                                         </div>
                                         <div className="col-12">
                                             <h6>Tarea : descripcion de la tarea</h6>
@@ -270,7 +270,7 @@ class cursos extends React.Component{
                                 <div class="card-body">
                                 <div className="row">
                                         <div className="col-12">
-                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
+                                             <a href="https://www.unapiquitos.edu.pe/contenido/noticias/descargas/Formato-de-Silabo-UNAP2.pdf"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
 
                                         </div>
                                         <div className="col-12">

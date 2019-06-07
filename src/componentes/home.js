@@ -91,8 +91,8 @@ class home extends React.Component {
             <div class="wrapper pr-1 pl-1">
             <Menu cursos={this.state.cursos} alumnoid={this.props.params.id}></Menu>
             <div class="container">
-                <Navbar></Navbar>
-                <Tareasycursos cursos={this.state.cursos} ></Tareasycursos>
+                <Navbar alumnoid={this.props.params.id}></Navbar>
+                <Tareasycursos cursos={this.state.cursos} alumnoid={this.props.params.id} ></Tareasycursos>
             </div>
             
             </div>

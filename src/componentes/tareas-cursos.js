@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { browserHistory } from 'react-router-3';
+
 class tareasyCursos extends React.Component{
 
   constructor(props){
@@ -9,7 +11,8 @@ class tareasyCursos extends React.Component{
            };
     
      this.onClick= this.onClick.bind(this);
-    // this.onClick2= this.onClick2.bind(this);
+      this.onClick2=this.onClick2.bind(this);
+    //  this.onClick2= this.onClick2.bind(this);
 
 }
 
@@ -23,7 +26,12 @@ onClick=(e)=>{
   
   
 
+} 
+
+onClick2=(e)=>{
+    browserHistory.push('/curso/'+e+'/'+this.props.alumnoid)
 }
+
     render(){
       console.log("hola: "+this.props.cursos)
         return(
@@ -126,7 +134,7 @@ onClick=(e)=>{
                 <div class="card">
                 <div class="card-header" id={"headingn"+i} >
                   <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse"  data-target={"#collapsen"+i} aria-expanded="true" aria-controls={"collapsen"+i} >
+                    <button  class="btn btn-link" data-toggle="collapse"  data-target={"#collapsen"+i} aria-expanded="true" aria-controls={"collapsen"+i} >
                         {curso.curso}
                     </button>
                   </h5>
@@ -144,7 +152,7 @@ onClick=(e)=>{
                                      <h6 className="text-secondary">{"Creditos: "+curso.creditos}</h6>
                                      <h6 className="text-secondary">{"Salon: "+curso.salon}</h6>
      
-                                     <button type="submit" class="btn  btn-small color-boton" >ver mas</button>
+                                     <a  href={'/curso/'+curso.id+'/'+this.props.alumnoid} class="btn  btn-small color-boton" >ver mas</a>
      
                                 </div>
                      </div>                  
@@ -175,7 +183,7 @@ onClick=(e)=>{
                                 
                                 <h6 className="text-secondary">Aula: 205</h6>
 
-                                <button type="submit" class="btn  btn-small color-boton" >ver mas</button>
+                                {/* <button type="submit" class="btn  btn-small color-boton" >ver mas</button> */}
 
                            </div>
                 </div>                  
