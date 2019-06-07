@@ -22,6 +22,7 @@ class home extends React.Component {
     componentWillMount() {
         let currentComponent = this;
         let array=[];
+        // let array2=[];
         let i=0;
         fetch('https://back-ihc.herokuapp.com/api/student?id='+this.props.params.id)
             .then(
@@ -31,8 +32,15 @@ class home extends React.Component {
                 }).then(function (data) {
                     console.log(data.programmings[0].courses[0].name);
                     data.programmings.forEach(element => {
-                        array[i]=element.courses[0];   
-                       // console.log(array[i])
+                    array[i]={    
+                     "creditos":element.courses[0].credit,
+                      "ciclo" :element.courses[0].cycle,
+                      "curso":element.courses[0].name,
+                       "nprofesor": element.teachers[0].name,
+                        "aprofesor":element.teachers[0].surname
+                    }
+                        // array[i]=element.courses[0];   
+                        // console.log(array2[i])
                         i++;
                     });
 
@@ -81,7 +89,7 @@ class home extends React.Component {
             <Menu cursos={this.state.cursos}></Menu>
             <div class="container">
                 <Navbar></Navbar>
-                <Tareasycursos></Tareasycursos>
+                <Tareasycursos cursos={this.state.cursos}></Tareasycursos>
             </div>
             
             </div>
