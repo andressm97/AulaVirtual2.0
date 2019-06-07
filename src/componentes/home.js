@@ -36,8 +36,10 @@ class home extends React.Component {
                      "creditos":element.courses[0].credit,
                       "ciclo" :element.courses[0].cycle,
                       "curso":element.courses[0].name,
+                      "id":element.courses[0].id,
                        "nprofesor": element.teachers[0].name,
-                        "aprofesor":element.teachers[0].surname
+                        "aprofesor":element.teachers[0].surname,
+                        "salon":element.classroom
                     }
                         // array[i]=element.courses[0];   
                         // console.log(array2[i])
