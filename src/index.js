@@ -11,6 +11,7 @@ import home from './componentes/home';
 import * as serviceWorker from './serviceWorker';
 import { browserHistory,Router,Route } from 'react-router-3';
 import homeProfesor from './componentes/homeProfesor';
+import ejemplo from './componentes/ejemplo';
 
 class Index extends React.Component{
     render(){
@@ -20,9 +21,9 @@ class Index extends React.Component{
                     component={()=> <Login/>}
                     path="/">
                 </Router>
-                <Router component path="/home/:id" component={home}></Router>
-                <Router component path="/homep/:id" component={homeProfesor}></Router>
-
+                <Router path="/home/:id" component={home}></Router>
+                <Router  path="/homep/:id" component={homeProfesor}></Router>
+                <Router  path="/prueba" component={ejemplo}></Router>
             </Router>
         )
     }
