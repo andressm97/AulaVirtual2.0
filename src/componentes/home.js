@@ -32,15 +32,6 @@ class home extends React.Component {
                 }).then(function (data) {
                     console.log(data.programmings[0].courses[0].name);
                     data.programmings.forEach(element => {
-<<<<<<< HEAD
-                        array[i] = {
-                            "creditos": element.courses[0].credit,
-                            "ciclo": element.courses[0].cycle,
-                            "curso": element.courses[0].name,
-                            "nprofesor": element.teachers[0].name,
-                            "aprofesor": element.teachers[0].surname
-                        }
-=======
                     array[i]={    
                      "creditos":element.courses[0].credit,
                       "ciclo" :element.courses[0].cycle,
@@ -50,7 +41,6 @@ class home extends React.Component {
                         "aprofesor":element.teachers[0].surname,
                         "salon":element.classroom
                     }
->>>>>>> master
                         // array[i]=element.courses[0];   
                         // console.log(array2[i])
                         console.log('[CurrentArray]: ' + array[i]);
@@ -99,21 +89,12 @@ class home extends React.Component {
         console.log("array" + this.state.cursos);
         return (
             <div class="wrapper pr-1 pl-1">
-<<<<<<< HEAD
             <Menu cursos={this.state.cursos} alumnoid={this.props.params.id}></Menu>
             <div class="container">
                 <Navbar></Navbar>
                 <Tareasycursos cursos={this.state.cursos} ></Tareasycursos>
             </div>
             
-=======
-                <Menu cursos={this.state.cursos}></Menu>
-                <div class="container">
-                    <Navbar></Navbar>
-                    <Tareasycursos cursos={this.state.cursos}></Tareasycursos>
-                </div>
-
->>>>>>> refs/remotes/origin/master
             </div>
 
             //             <div class="wrapper pr-1 pl-1">
