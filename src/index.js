@@ -10,6 +10,7 @@ import home from './componentes/home';
 
 import * as serviceWorker from './serviceWorker';
 import { browserHistory,Router,Route } from 'react-router-3';
+import homeProfesor from './componentes/homeProfesor';
 
 class Index extends React.Component{
     render(){
@@ -19,10 +20,8 @@ class Index extends React.Component{
                     component={()=> <Login/>}
                     path="/">
                 </Router>
-                <Router
-                    component path="/home" component={home}
-                ></Router>
-
+                <Router component path="/home/:id" component={home}></Router>
+                <Router component path="/homep/:id" component={homeProfesor}></Router>
 
             </Router>
         )

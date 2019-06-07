@@ -32,7 +32,7 @@ class login extends React.Component {
     onSubmit = (e) => {
         let currentComponent = this;
         fetch('https://back-ihc.herokuapp.com/api/login?email='
-            + this.state.usuario + '@example.org&password=' + this.state.contrasena)
+            + this.state.usuario + '&password=' + this.state.contrasena)
             .then(
                 function (response) {
                     return response.json();
@@ -40,22 +40,34 @@ class login extends React.Component {
                     if (data.tipo == -1) {
                         swal("Usuario Incorrecto", "", "error");
                     }
-                    else {
-                        console.log(data);
-                        if (data.tipo == 0) {
-                            currentComponent.setState({
-                                ingreso: false,
-                                isStudent: true,
-                                datos: data
-                            });
-                        } else if (data.tipo == 1) {
-                            currentComponent.setState({
-                                ingreso: false,
-                                isStudent: false,
-                                datos: data
-                            });
-                        }
+                    else if(data.tipo==1) {
+                        // console.log(data);
+
+                        swal("Bienvenido alumno" ,"", "success").then(
+                            browserHistory.push('/home/'+data.usuario_id))
                     }
+                    else{
+                        swal("Bienvenido profesor" ,"", "success").then(
+                            browserHistory.push('/homep/'+data.usuario_id))
+                    }
+
+
+                        // if (data.tipo == 0) {
+                        //     currentComponent.setState({
+                        //         ingreso: false,
+                        //         isStudent: true,
+                        //         datos: data
+                        //     });
+                        // } else if (data.tipo == 1) {
+                        //     currentComponent.setState({
+                        //         ingreso: false,
+                        //         isStudent: false,
+                        //         datos: data
+                        //     });
+                        // }
+                    
+
+                    // swal("Usuario Incorrecto", "", "error");
 
 
                 }

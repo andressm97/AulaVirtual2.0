@@ -10,6 +10,7 @@ class home extends React.Component {
         this.state = {
             aparecer: true,
             aparecer2: false,
+            cursos: []
         };
 
         this.onClick = this.onClick.bind(this);
@@ -17,6 +18,32 @@ class home extends React.Component {
 
     }
     componentWillMount() {
+        let currentComponent = this;
+        let array=[];
+        let i=0;
+        fetch('https://back-ihc.herokuapp.com/api/student?id='+this.props.params.id)
+            .then(
+
+                function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    console.log(data.programmings[0].courses[0].name);
+                    data.programmings.forEach(element => {
+                        array[i]=element.courses[0];   
+                       // console.log(array[i])
+                        i++;
+                    });
+
+                   // console.log("este es "+array[1].id);
+                    currentComponent.setState({
+                        cursos: array
+                        
+                    })
+
+                })
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
 
     }
 
@@ -45,7 +72,8 @@ class home extends React.Component {
     }
 
     render() {
-        console.log("datos" + this.props.Datos.id);
+         console.log("id :" + this.props.params.id);
+         console.log("array" + this.state.cursos);
         return (
 
             <div class="wrapper pr-1 pl-1">
@@ -60,6 +88,15 @@ class home extends React.Component {
                         <li class="active">
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mis cursos</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
+
+                                {
+                                    this.state.cursos.map((curso)=>{
+                                       return( <li>
+                                            <a>{curso.name}</a>
+                                        </li>)
+                                    })
+                                }
+{/* 
                                 <li>
                                     <a href="#" onClick={this.onClick}>Etica de la profesion</a>
                                 </li>
@@ -68,7 +105,7 @@ class home extends React.Component {
                                 </li>
                                 <li>
                                     <a href="#">Calculo 2</a>
-                                </li>
+                                </li> */}
                             </ul>
                         </li>
 
