@@ -12,6 +12,8 @@ class cursos extends React.Component{
             aparecer2: false,
             cursos: [],
             curso_i: '',
+            pnombre:'',
+            papellido:'',
         };
 
         this.onClick = this.onClick.bind(this);
@@ -62,13 +64,14 @@ class cursos extends React.Component{
 
                 function (response) {
                     return response.json();
-                }).then(function (data) {
+                }).then(function (data2) {
                  
 
-                   // console.log("este es "+array[1].id);
+                   console.log("datos: "+data2.programming.teachers[0].name);
                     currentComponent.setState({
-                        curso_i: data
-                        
+                        pnombre:data2.programming.teachers[0].name,
+                        papellido: data2.programming.teachers[0].surname,
+                        curso_i: data2.name
                     })
 
                 })
@@ -99,8 +102,8 @@ class cursos extends React.Component{
             <div className="container">
                  <div className="row m-1">
                     <div className="col-12 ">
-                        <h3>{this.state.curso_i.name}</h3>
-                        <h6>Ceron, Fernando</h6>
+                        <h3>{this.state.curso_i}</h3>
+                        <h6>{this.state.papellido +" ,"+ this.state.pnombre}</h6>
                     </div>
                  
                  </div>
