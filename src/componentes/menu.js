@@ -1,6 +1,9 @@
 import React from 'react';
 class menu extends React.Component{
     
+    
+
+
     render(){
         return(
             <div class="">
@@ -19,7 +22,7 @@ class menu extends React.Component{
                             {
                                 this.props.cursos.map((curso)=>{
                                    return( <li>
-                                        <a href={"/curso/"+curso.id} >{curso.curso}</a>
+                                        <a href={"/curso/"+curso.id+"/"+this.props.alumnoid} >{curso.curso}</a>
                                     </li>)
                                 })
                             } 

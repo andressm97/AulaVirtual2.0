@@ -88,10 +88,10 @@ class home extends React.Component {
          console.log("array" + this.state.cursos);
         return (
             <div class="wrapper pr-1 pl-1">
-            <Menu cursos={this.state.cursos}></Menu>
+            <Menu cursos={this.state.cursos} alumnoid={this.props.params.id}></Menu>
             <div class="container">
                 <Navbar></Navbar>
-                <Tareasycursos cursos={this.state.cursos}></Tareasycursos>
+                <Tareasycursos cursos={this.state.cursos} ></Tareasycursos>
             </div>
             
             </div>

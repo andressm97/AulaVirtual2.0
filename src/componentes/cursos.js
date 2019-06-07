@@ -1,8 +1,87 @@
 import React from 'react';
 import './cursos.css';
 import swal from 'sweetalert';
-
+import Menu from './menu'
+import Navbar from './navbar'
 class cursos extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            aparecer: true,
+            aparecer2: false,
+            cursos: [],
+            curso_i: '',
+        };
+
+        this.onClick = this.onClick.bind(this);
+        
+
+    }
+
+    componentWillMount() {
+        let currentComponent = this;
+        let array=[];
+        // let array2=[];
+        let i=0;
+        fetch('https://back-ihc.herokuapp.com/api/student?id='+this.props.params.alumnoid)
+            .then(
+
+                function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    console.log(data.programmings[0].courses[0].name);
+                    data.programmings.forEach(element => {
+                    array[i]={    
+                     "creditos":element.courses[0].credit,
+                      "ciclo" :element.courses[0].cycle,
+                      "curso":element.courses[0].name,
+                      "id":element.courses[0].id,
+                       "nprofesor": element.teachers[0].name,
+                        "aprofesor":element.teachers[0].surname,
+                        "salon":element.classroom
+                    }
+                        // array[i]=element.courses[0];   
+                         console.log(array[i])
+                        i++;
+                    });
+
+                   // console.log("este es "+array[1].id);
+                    currentComponent.setState({
+                        cursos: array
+                        
+                    })
+
+                })
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+
+            fetch('https://back-ihc.herokuapp.com/api/course?id='+this.props.params.cursoid)
+            .then(
+
+                function (response) {
+                    return response.json();
+                }).then(function (data) {
+                 
+
+                   // console.log("este es "+array[1].id);
+                    currentComponent.setState({
+                        curso_i: data
+                        
+                    })
+
+                })
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+
+    }
+
+
+
+
+
     
     onClick=(e)=>{
         swal("Enviado correctamente" ,"", "success");
@@ -13,10 +92,14 @@ class cursos extends React.Component{
 
         return(
 
+            <div class="wrapper pr-1 pl-1">
+            <Menu cursos={this.state.cursos} alumnoid={this.props.params.alumnoid}></Menu>
+            <div className="container">
+            <Navbar></Navbar>
             <div className="container">
                  <div className="row m-1">
                     <div className="col-12 ">
-                        <h3>Etica de la profesion</h3>
+                        <h3>{this.state.curso_i.name}</h3>
                         <h6>Ceron, Fernando</h6>
                     </div>
                  
@@ -247,8 +330,8 @@ class cursos extends React.Component{
                  
                  </div>
             </div>
-
-
+            </div>
+            </div>
 
 
         )
