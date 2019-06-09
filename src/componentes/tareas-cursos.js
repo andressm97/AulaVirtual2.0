@@ -31,6 +31,12 @@ onClick=(e)=>{
 onClick2=(e)=>{
     browserHistory.push('/curso/'+e+'/'+this.props.alumnoid)
 }
+funcion(i){
+  if(i==0){
+      return "show";
+  }
+  else return "";
+}
 
     render(){
       console.log("hola: "+this.props.cursos)
@@ -140,7 +146,7 @@ onClick2=(e)=>{
                   </h5>
                 </div>
             
-                <div id={"collapsen"+i}  class="collapse " aria-labelledby={"headingn"+i} data-parent="#accordion">
+                <div id={"collapsen"+i}  class={"collapse "+this.funcion(i)} aria-labelledby={"headingn"+i} data-parent="#accordion">
                   <div class="card-body">
                   <h6>Informacion del curso</h6>
                      <div className="row ml-5">
@@ -163,37 +169,14 @@ onClick2=(e)=>{
               )
             })
           }               
-         <div class="card">
-           <div class="card-header" id="headingOne">
-             <h5 class="mb-0">
-               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                   Etica de la Profesion
-               </button>
-             </h5>
-           </div>
+        
+         
+         
+         
+       </div>
        
-           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-             <div class="card-body">
-             <h6>Informacion del curso</h6>
-                <div className="row ml-5">
-                           <div className="col-12">
-                                <h6 className="text-secondary">Profesor: Ceron,Fernando</h6> 
-
-                                <h6 className="text-secondary">Horario: 9:00-11:00 am</h6> 
-                                
-                                <h6 className="text-secondary">Aula: 205</h6>
-
-                                {/* <button type="submit" class="btn  btn-small color-boton" >ver mas</button> */}
-
-                           </div>
-                </div>                  
-             </div>
-           </div>
-         </div>
-         
-         
-         
-       </div></div>
+       
+       </div>
            </div>
            
                   
