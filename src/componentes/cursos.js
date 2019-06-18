@@ -17,7 +17,8 @@ class cursos extends React.Component{
         };
 
         this.onClick = this.onClick.bind(this);
-        
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -32,7 +33,10 @@ class cursos extends React.Component{
                 function (response) {
                     return response.json();
                 }).then(function (data) {
-                    console.log(data.programmings[0].courses[0].name);
+                    var b = data.programmings;
+                    for(let a in b){
+                        console.log(b[a]['id']+" "+b[a]['course_id']);
+                    }
                     data.programmings.forEach(element => {
                     array[i]={    
                      "creditos":element.courses[0].credit,
@@ -44,7 +48,7 @@ class cursos extends React.Component{
                         "salon":element.classroom
                     }
                         // array[i]=element.courses[0];   
-                         console.log(array[i])
+                        //  console.log(array[i])
                         i++;
                     });
 
@@ -80,6 +84,40 @@ class cursos extends React.Component{
             });
 
     }
+
+    handleChange(event) {
+        var file = event.target.files[0];
+
+        // var h = new Headers();
+        //     h.append('Accept','application/json,text,binary');  
+        //     h.append('Content-type','application/json'); 
+        
+        var data = new FormData();
+        data.append('file', file);
+        data.append('id', this.props.params.cursoid);
+
+        fetch('http://localhost:8000/api/document/',{
+            // headers: h,
+            method:'POST',
+            body:data
+        })
+            .then(
+
+                function (response) {
+                    return response.json();
+                }).then(function (data2) {
+                    console.log(data2);
+                })
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+        // this.setState({value: event.target.files[0]});
+      }
+    
+      handleSubmit(event) {
+        // alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+      }
 
 
 
@@ -141,13 +179,15 @@ class cursos extends React.Component{
                                             <a href="http://oa.upm.es/40012/1/PFC_JOSE_MANUEL_SANCHEZ_PENO_3.pdf"target="_blank"><i class="fas fa-file iconoArchivo"></i> Documento 2</a>
                                         </div>
                                         <div className="col-12">
-                                            <h6>Tarea : descripcion de la tarea</h6>
-                                            <div class="form-group mb-0">
-                                                <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
-                                                <input type="file" id="ejemplo_archivo_1"/>
-                                            </div>
-                            
-                                            <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
+                                            <form onSubmit={this.handleSubmit} enctype="multipart/form-data">
+                                                <h6>Tarea : descripcion de la tarea</h6>
+                                                <div class="form-group mb-0">
+                                                    <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
+                                                    <input type="file" value={this.state.value} onChange={this.handleChange} id="ejemplo_archivo_1"/>
+                                                </div>
+                                
+                                                <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
+                                            </form>
                                         </div>
                                 </div>
                                     
