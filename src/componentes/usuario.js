@@ -138,7 +138,6 @@
 
 import React from 'react';
 import swal from 'sweetalert';
-
 import Menu from './menu';
 import Navbar from './navbar';
 class usuario extends React.Component{
@@ -230,8 +229,8 @@ class usuario extends React.Component{
                 function (response) {
                     return response.json();
                 }).then(function (data2) {
-                    if(data2 == 'ok'){
-                        swal("Enviado correctamente" ,"", "success");
+                    if(data2 == true){
+                        swal("Actualizado correctamente" ,"", "success");
                     }
                 })
             .catch(function (err) {
@@ -244,9 +243,9 @@ class usuario extends React.Component{
         event.preventDefault();
       }
 
-      onClick=(e)=>{
-        window.locationf="/home/"+this.props.params.alumno;
-    }
+    //   onClick=(e)=>{
+        
+    // }
     render(){
         return(
 

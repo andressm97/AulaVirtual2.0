@@ -1,7 +1,7 @@
 import React from 'react';
 import TareasCursosProfesor from './tareasCursosProfesor';
 import MenuProfesor from './menuProfesor';
-import Navbar from './navbar';
+import NavBarProfesor from './navbarProfesor';
 
 class homeProfesor extends React.Component {
 
@@ -48,8 +48,8 @@ class homeProfesor extends React.Component {
       <div className="wrapper pr-1 pl-1">
         <MenuProfesor cursos={this.state.cursos} />
         <div className="container">
-          <Navbar />
-          <TareasCursosProfesor cursos={this.state.cursos} />
+          <NavBarProfesor teacherId={this.props.params.id}/>
+          <TareasCursosProfesor cursos={this.state.cursos}/>
         </div>
       </div>
     )
