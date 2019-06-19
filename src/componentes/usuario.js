@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './menu';
 import Navbar from './navbar';
+import './usuario.css'
 class usuario extends React.Component{
     
     constructor(props) {
@@ -65,8 +66,8 @@ class usuario extends React.Component{
             
             <Navbar alumnoid={this.props.params.alumno}></Navbar>
 
-            <div className="container">
-            <div className="row">
+            <div className="container dim_">
+            <div className="row sombras_ mt-5">
             <div className="col-12 p-5">
                 <form>
                     <div class="form-row">
@@ -121,7 +122,7 @@ class usuario extends React.Component{
                         </div>
                     </div>
                    
-                    <a type="submit" href={"/home/"+this.props.params.alumno} class="btn btn-primary">Aceptar</a>
+                    <a type="submit" href={"/home/"+this.props.params.alumno} class="btn color_">Aceptar</a>
             </form>
         
             </div>

@@ -1,5 +1,42 @@
 import React from 'react';
+import { browserHistory } from 'react-router-3';
+import swal from 'sweetalert';
+
 class navbar extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+           
+        };
+        this.Cerrar = this.Cerrar.bind(this);
+        
+    }
+
+    Cerrar=(e)=>{
+       // swal("Eres un cagon weon ...!" ,"", "success").then(
+         //   browserHistory.push('/'))
+
+         swal({
+            title: "¿Está seguro que quiere cerrar la sesión?",
+            text: "perdera los cambios sin guardar",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("sesión cerrada exitosamente...!", {
+                icon: "success",
+              }).then(
+                browserHistory.push('/')
+              )
+              ;
+            } else {
+              swal("Guarda los cambios antes de salir");
+            }
+          });
+
+    }
 
     render(){
         return(
@@ -28,7 +65,7 @@ class navbar extends React.Component{
                                 <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fas fa-user icono"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href={"/usuario/"+this.props.alumnoid}>mis datos</a>
-                                    <a class="dropdown-item" href="/">Cerrar Sesion</a>
+                                    <a class="dropdown-item" onClick={this.Cerrar} >Cerrar Sesion</a>
                                     {/* <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#">Something else here</a> */}
                                 </div>
