@@ -44,7 +44,8 @@ funcion(i){
         return(
             
             <div className="container">      
-            <h3>Tareas Pendientes</h3>
+            <h3 className="mt-3 mb-0">Tareas Pendientes</h3>
+            <h6 className="mt-0 mb-0 pt-0 mb-4">¿que tienes para hoy?</h6>
             <div className="row">
                        <div className="col-6">
                            <div class="card sombras_" >
@@ -128,8 +129,8 @@ funcion(i){
                        </div>
                </div>
        
-           <h3>Cursos de hoy</h3>
-       
+           <h3 className="mt-3 mb-0">Cursos de hoy</h3>
+           <h6 className="mt-0 mb-0 pt-0 mb-4">¿que te toca hoy?</h6>
            <div className="row">
                        
                        <div className="col-12">
@@ -138,7 +139,7 @@ funcion(i){
           {
             this.props.cursos.map((curso,i)=>{
               return(
-                <div class="card">
+                <div class="card sombras_ mb-2">
                 <div class="card-header" id={"headingn"+i} >
                   <h5 class="mb-0">
                     <button  class="btn btn-link" data-toggle="collapse"  data-target={"#collapsen"+i} aria-expanded="true" aria-controls={"collapsen"+i} >
