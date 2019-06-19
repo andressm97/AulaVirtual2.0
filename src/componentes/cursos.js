@@ -14,6 +14,7 @@ class cursos extends React.Component{
             curso_i: '',
             pnombre:'',
             papellido:'',
+            progras:[]
         };
 
         this.onClick = this.onClick.bind(this);
@@ -33,19 +34,19 @@ class cursos extends React.Component{
                 function (response) {
                     return response.json();
                 }).then(function (data) {
-                    var b = data.programmings;
-                    for(let a in b){
-                        console.log(b[a]['id']+" "+b[a]['course_id']);
-                    }
+                    currentComponent.setState({
+                        progras: data.programmings
+                        
+                    })
                     data.programmings.forEach(element => {
                     array[i]={    
                      "creditos":element.courses[0].credit,
-                      "ciclo" :element.courses[0].cycle,
-                      "curso":element.courses[0].name,
-                      "id":element.courses[0].id,
-                       "nprofesor": element.teachers[0].name,
-                        "aprofesor":element.teachers[0].surname,
-                        "salon":element.classroom
+                     "ciclo" :element.courses[0].cycle,
+                     "curso":element.courses[0].name,
+                     "id":element.courses[0].id,
+                     "nprofesor": element.teachers[0].name,
+                     "aprofesor":element.teachers[0].surname,
+                     "salon":element.classroom
                     }
                         // array[i]=element.courses[0];   
                         //  console.log(array[i])
@@ -86,18 +87,25 @@ class cursos extends React.Component{
     }
 
     handleChange(event) {
-        var file = event.target.files[0];
-
-        // var h = new Headers();
-        //     h.append('Accept','application/json,text,binary');  
-        //     h.append('Content-type','application/json'); 
         
+        var file = event.target.files[0];
+        var progras = this.state.progras;
+        
+        var id = -1;
+        for(let index in progras){
+             
+            if(progras[index]['course_id'] == this.props.params.cursoid){
+                id = progras[index]['id'];
+                break;
+            }
+        }
+
+
         var data = new FormData();
         data.append('file', file);
-        data.append('id', this.props.params.cursoid);
-
-        fetch('http://localhost:8000/api/document/',{
-            // headers: h,
+        data.append('id', id);
+        
+        fetch('https://back-ihc.herokuapp.com/api/document/',{
             method:'POST',
             body:data
         })
@@ -185,7 +193,6 @@ class cursos extends React.Component{
                                                     <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
                                                     <input type="file" value={this.state.value} onChange={this.handleChange} id="ejemplo_archivo_1"/>
                                                 </div>
-                                
                                                 <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
                                             </form>
                                         </div>
@@ -215,13 +222,15 @@ class cursos extends React.Component{
                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 2</a>
                                         </div>
                                         <div className="col-12">
-                                            <h6>Tarea : descripcion de la tarea</h6>
-                                            <div class="form-group mb-0">
-                                                <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
-                                                <input type="file" id="ejemplo_archivo_1"/>
-                                            </div>
-                            
-                                            <button type="submit" class="btn  btn-small color-boton" onClick={this.onClick}>Enviar</button>
+                                            <form onSubmit={this.handleSubmit} enctype="multipart/form-data">
+                                                <h6>Tarea : descripcion de la tarea</h6>
+                                                <div class="form-group mb-0">
+                                                    <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
+                                                    <input type="file" value={this.state.value} onChange={this.handleChange} id="ejemplo_archivo_1"/>
+                                                </div>
+                                
+                                                <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
+                                            </form>
                                         </div>
                                 </div>
                                     
@@ -249,13 +258,15 @@ class cursos extends React.Component{
                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 2</a>
                                         </div>
                                         <div className="col-12">
-                                            <h6>Tarea : descripcion de la tarea</h6>
-                                            <div class="form-group mb-0">
-                                                <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
-                                                <input type="file" id="ejemplo_archivo_1"/>
-                                            </div>
-                            
-                                            <button type="submit" class="btn  btn-small color-boton">Enviar</button>
+                                            <form onSubmit={this.handleSubmit} enctype="multipart/form-data">
+                                                <h6>Tarea : descripcion de la tarea</h6>
+                                                <div class="form-group mb-0">
+                                                    <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
+                                                    <input type="file" value={this.state.value} onChange={this.handleChange} id="ejemplo_archivo_1"/>
+                                                </div>
+                                
+                                                <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
+                                            </form>
                                         </div>
                                 </div>
                                     
@@ -283,13 +294,15 @@ class cursos extends React.Component{
                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 2</a>
                                         </div>
                                         <div className="col-12">
-                                            <h6>Tarea : descripcion de la tarea</h6>
-                                            <div class="form-group mb-0">
-                                                <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
-                                                <input type="file" id="ejemplo_archivo_1"/>
-                                            </div>
-                            
-                                            <button type="submit" class="btn  btn-small color-boton">Enviar</button>
+                                            <form onSubmit={this.handleSubmit} enctype="multipart/form-data">
+                                                <h6>Tarea : descripcion de la tarea</h6>
+                                                <div class="form-group mb-0">
+                                                    <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
+                                                    <input type="file" value={this.state.value} onChange={this.handleChange} id="ejemplo_archivo_1"/>
+                                                </div>
+                                
+                                                <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
+                                            </form>
                                         </div>
                                 </div>
                                     
@@ -317,13 +330,16 @@ class cursos extends React.Component{
                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 2</a>
                                         </div>
                                         <div className="col-12">
-                                            <h6>Tarea : descripcion de la tarea</h6>
-                                            <div class="form-group mb-0">
-                                                <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
-                                                <input type="file" id="ejemplo_archivo_1"/>
-                                            </div>
+                                            <form onSubmit={this.handleSubmit} enctype="multipart/form-data">
+                                                <h6>Tarea : descripcion de la tarea</h6>
+                                                <div class="form-group mb-0">
+                                                    <label for="ejemplo_archivo_1"><i class="fas fa-file-upload iconoSubida">  </i></label>
+                                                    <input type="file" value={this.state.value} onChange={this.handleChange} id="ejemplo_archivo_1"/>
+                                                </div>
+                                
+                                                <button type="submit" class="btn  btn-small color-boton"onClick={this.onClick}>Enviar</button>
+                                            </form>
                             
-                                            <button type="submit" class="btn  btn-small color-boton">Enviar</button>
                                         </div>
                                 </div>
                                     

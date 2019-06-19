@@ -54,7 +54,57 @@ class usuario extends React.Component{
 
     }
 
+    handleChange(event) {
+        
+
+        // console.log(event.target.value);
+        
+        // fetch('http://localhost/api/document/',{
+        //     method:'POST',
+        //     body:0
+        // })
+        //     .then(
+
+        //         function (response) {
+        //             return response.json();
+        //         }).then(function (data2) {
+        //             console.log(data2);
+        //         })
+        //     .catch(function (err) {
+        //         console.log('Fetch Error :-S', err);
+        //     });
+      }
     
+      handleSubmit(event) {
+
+        // var id = event.target.id.value;
+        // var nombres = event.target.nombres.value;
+        // var apellidos = event.target.apellidos.value;
+        // var dir = event.target.dir.value;
+        const data = new FormData(event.target);
+        fetch('http://localhost:8000/api/studentupdate/',{
+            method:'POST',
+            body: data
+        })
+            .then(
+                function (response) {
+                    return response.json();
+                }).then(function (data2) {
+                    console.log(data2);
+                })
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+
+
+
+
+        event.preventDefault();
+      }
+
+      onClick=(e)=>{
+        window.locationf="/home/"+this.props.params.alumno;
+    }
     render(){
         return(
 
@@ -68,20 +118,21 @@ class usuario extends React.Component{
             <div className="container">
             <div className="row">
             <div className="col-12 p-5">
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="inputEmail4">Nombres</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nombres" value={this.state.datos.name} disabled/>
+                        <input type="hidden" value={this.props.params.alumno} name="id" onChange={this.handleChange}/>
+                        <input type="text" class="form-control" id="inputEmail4" name="nombres" placeholder="Nombres" onChange={this.handleChange} value={this.state.datos.name} />
                         </div>
                         <div class="form-group col-md-6">
                         <label for="inputPassword4">Apellido</label>
-                        <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido" value={this.state.datos.surname} disabled/>
+                        <input type="text" class="form-control" id="inputPassword4" name="apellidos" placeholder="Apellido" onChange={this.handleChange} value={this.state.datos.surname} />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Direccion</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value="av.Marquez de Corpac Mz C Lt 18"/>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="dir" onChange={this.handleChange} value={this.state.datos.address}/>
                     </div>
                     <div class="form-row">
                     <div class="form-group col-md-3">
@@ -121,7 +172,9 @@ class usuario extends React.Component{
                         </div>
                     </div>
                    
-                    <a type="submit" href={"/home/"+this.props.params.alumno} class="btn btn-primary">Aceptar</a>
+                    {/* <a type="submit"  href={"/home/"+this.props.params.alumno} class="btn btn-primary">Aceptar</a> */}
+                    <button type="submit" class="btn  btn-small color-boton" onClick={this.onClick}>Aceptar</button>
+
             </form>
         
             </div>
@@ -134,3 +187,4 @@ class usuario extends React.Component{
     }
 }
 export default usuario;
+//
