@@ -79,6 +79,7 @@ class tareasyCursos extends React.Component {
                   </div>
                 </div>
 
+<<<<<<< HEAD
 
 
               </div>
@@ -91,6 +92,77 @@ class tareasyCursos extends React.Component {
                 <div class="card-body">
                   <h5 class="card-title">No ha seleccionado una tarea</h5>
                   {/* <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+=======
+    render(){
+      console.log("hola: "+this.props.cursos)
+        return(
+            
+            <div className="container">      
+            <h3 className="mt-3 mb-0 fuentes_titulos">Tareas Pendientes</h3>
+            <h6 className="mt-0 mb-0 pt-0 mb-4">¿que tienes para hoy?</h6>
+            <div className="row">
+                       <div className="col-6">
+                           <div class="card sombras_" >
+                               <div class="card-body">
+                                  
+                                  <div class="panel-group" id="accordion">
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <h6 class="panel-title">
+               <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+               HOY</a>
+             </h6>
+           </div>
+           <div id="collapse1" class="panel-collapse collapse show">
+             <div class="panel-body">
+             <div class="list-group-flush">
+       
+         <a href="#" class="list-group-item list-group-item-action" >Presentacion de proyecto</a>
+         <a href="#" class="list-group-item list-group-item-action" onClick={this.onClick}>Entrega de Tarea IHC</a>
+         <a href="#" class="list-group-item list-group-item-action">Exposicion</a>
+         <a href="#" class="list-group-item list-group-item-action disabled">Entrega de Tarea Calculo</a>
+       </div>
+       
+             </div>
+           </div>
+         </div>
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <h6 class="panel-title">
+               <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+               MAÑANA</a>
+             </h6>
+           </div>
+           <div id="collapse2" class="panel-collapse collapse">
+             <div class="panel-body">----</div>
+           </div>
+         </div>
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <h6 class="panel-title">
+               <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+               PROXIMAMENTE</a>
+             </h6>
+           </div>
+           <div id="collapse3" class="panel-collapse collapse">
+             <div class="panel-body">Examen Parcial</div>
+           </div>
+         </div>
+       </div>
+                                   
+                               
+                               
+                               </div>
+                           </div>
+                       </div>
+               
+                       <div className="col-6">
+                           {this.state.card?(
+                           <div class="card estilo_ estilo_text sombras_" >
+                               <div class="card-body d-flex">
+                                   <h5 class="card-title justify-content-center align-self-center">No ha seleccionado una tarea</h5>
+                                   {/* <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+>>>>>>> master
                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                    <a href="#" class="card-link">Card link</a>
                                    <a href="#" class="card-link">Another link</a> */}

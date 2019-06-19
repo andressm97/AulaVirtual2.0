@@ -130,6 +130,7 @@ class cursos extends React.Component {
         return (
 
             <div class="wrapper pr-1 pl-1">
+<<<<<<< HEAD
                 <Menu cursos={this.state.cursos} alumnoid={this.props.params.alumnoid}></Menu>
                 <div className="container">
                     <Navbar alumnoid={this.props.params.alumnoid}></Navbar>
@@ -139,6 +140,41 @@ class cursos extends React.Component {
                                 <h3>{this.state.curso_i}</h3>
                                 <h6>{this.state.papellido + " ," + this.state.pnombre}</h6>
                             </div>
+=======
+            <Menu cursos={this.state.cursos} alumnoid={this.props.params.alumnoid}></Menu>
+            <div className="container">
+            <Navbar alumnoid={this.props.params.alumnoid}></Navbar>
+            <div className="container">
+                 <div className="row m-1">
+                    <div className="col-12 ">
+                        <h3>{this.state.curso_i}</h3>
+                        <h6>{this.state.papellido +" ,"+ this.state.pnombre}</h6>
+                    </div>
+                 
+                 </div>
+
+                 <div className="row m-2 fondocurso sombras_">
+                 <div className="col-12">
+                  <p className="fuente-tamano">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue sapien ut faucibus rutrum. Cras semper pharetra libero quis laoreet. Sed eu consequat lectus, nec suscipit urna.</p>
+
+                    <a href="https://www.unapiquitos.edu.pe/contenido/noticias/descargas/Formato-de-Silabo-UNAP2.pdf" target="_blank"><i class="far fa-file-pdf iconopdf"></i> Sylabus</a>
+                 </div>
+                <div className="col-12 mt-3">
+                    <h5>Recursos</h5>
+
+                    <div className="row mb-4">
+                        
+                        <div className="col-12 pl-5 pr-5">
+                        <div id="accordion">
+                            <div class="card sombras_ mb-2">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <h6>semana 1: TEMA</h6>
+                                        </button>
+                                    </h5>
+                                </div>
+>>>>>>> master
 
                         </div>
 
@@ -164,6 +200,7 @@ class cursos extends React.Component {
                                                     </h5>
                                                 </div>
 
+<<<<<<< HEAD
                                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                                     <div class="card-body">
                                                         <div className="row">
@@ -190,6 +227,16 @@ class cursos extends React.Component {
                                                     </div>
                                                 </div>
                                             </div>
+=======
+                            <div class="card sombras_ mb-2">
+                                <div class="card-header" id="headingDos">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
+                                            <h6>semana 2: TEMA</h6>
+                                        </button>
+                                    </h5>
+                                </div>
+>>>>>>> master
 
                                             <div class="card">
                                                 <div class="card-header" id="headingDos">
@@ -224,6 +271,26 @@ class cursos extends React.Component {
                                                     </div>
                                                 </div>
                                             </div>
+<<<<<<< HEAD
+=======
+                            
+                                            <button type="submit" class="btn  btn-small color-boton" onClick={this.onClick}>Enviar</button>
+                                        </div>
+                                </div>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                       
+                            <div class="card sombras_ mb-2">
+                                <div class="card-header" id="headingTres">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
+                                            <h6>semana 3: TEMA</h6>
+                                        </button>
+                                    </h5>
+                                </div>
+>>>>>>> master
 
                                             <div class="card">
                                                 <div class="card-header" id="headingTres">
@@ -259,6 +326,7 @@ class cursos extends React.Component {
                                                 </div>
                                             </div>
 
+<<<<<<< HEAD
                                             <div class="card">
                                                 <div class="card-header" id="headingCuatro">
                                                     <h5 class="mb-0">
@@ -267,6 +335,22 @@ class cursos extends React.Component {
                                                         </button>
                                                     </h5>
                                                 </div>
+=======
+                            <div class="card sombras_ mb-2">
+                                <div class="card-header" id="headingCuatro">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCuatro" aria-expanded="true" aria-controls="collapseCuatro">
+                                            <h6>semana 4: TEMA</h6>
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseCuatro" class="collapse" aria-labelledby="headingCuatro" data-parent="#accordion">
+                                <div class="card-body">
+                                <div className="row">
+                                        <div className="col-12">
+                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
+>>>>>>> master
 
                                                 <div id="collapseCuatro" class="collapse" aria-labelledby="headingCuatro" data-parent="#accordion">
                                                     <div class="card-body">
@@ -293,6 +377,7 @@ class cursos extends React.Component {
                                                 </div>
                                             </div>
 
+<<<<<<< HEAD
                                             <div class="card">
                                                 <div class="card-header" id="headingCinco">
                                                     <h5 class="mb-0">
@@ -301,6 +386,22 @@ class cursos extends React.Component {
                                                         </button>
                                                     </h5>
                                                 </div>
+=======
+                            <div class="card sombras_ mb-2">
+                                <div class="card-header" id="headingCinco">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCinco" aria-expanded="false" aria-controls="collapseCinco">
+                                            <h6>semana 5: TEMA</h6>
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseCinco" class="collapse" aria-labelledby="headingCinco" data-parent="#accordion">
+                                <div class="card-body">
+                                <div className="row">
+                                        <div className="col-12">
+                                             <a href="https://www.unapiquitos.edu.pe/contenido/noticias/descargas/Formato-de-Silabo-UNAP2.pdf"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
+>>>>>>> master
 
                                                 <div id="collapseCinco" class="collapse" aria-labelledby="headingCinco" data-parent="#accordion">
                                                     <div class="card-body">
