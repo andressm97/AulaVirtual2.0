@@ -14,15 +14,15 @@ class navbar extends React.Component{
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto ">
                             <li class="nav-item active">
-                                <a class="nav-link" href={"/home/"+ this.props.alumnoid}>Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-white" href={"/home/"+ this.props.alumnoid}>Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">cursos</a>
+                                <a class="nav-link text-white" href="#">cursos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Mensajes</a>
+                                <a class="nav-link text-white" href="#">Mensajes</a>
                             </li>
                             <li class="nav-item dropdown ">
                                 <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fas fa-user icono"></i></a>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { browserHistory } from 'react-router-3';
+import './tareas-cursos.css'
 
 class tareasyCursos extends React.Component{
 
@@ -46,7 +47,7 @@ funcion(i){
             <h3>Tareas Pendientes</h3>
             <div className="row">
                        <div className="col-6">
-                           <div class="card " >
+                           <div class="card sombras_" >
                                <div class="card-body">
                                   
                                   <div class="panel-group" id="accordion">
@@ -102,9 +103,9 @@ funcion(i){
                
                        <div className="col-6">
                            {this.state.card?(
-                           <div class="card " >
-                               <div class="card-body">
-                                   <h5 class="card-title">No ha seleccionado una tarea</h5>
+                           <div class="card estilo_ estilo_text sombras_" >
+                               <div class="card-body d-flex">
+                                   <h5 class="card-title justify-content-center align-self-center">No ha seleccionado una tarea</h5>
                                    {/* <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                    <a href="#" class="card-link">Card link</a>
@@ -112,7 +113,7 @@ funcion(i){
                                </div>
                            </div>
                            ):(
-                            <div class="card " >
+                            <div class="card estilo_ sombras_" >
                             <div class="card-body">
                                 <h5 class="card-title">Entrega de Tarea IHC</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Yañez Duran, Carlos</h6>
