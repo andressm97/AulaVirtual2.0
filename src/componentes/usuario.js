@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './menu';
 import Navbar from './navbar';
+import './usuario.css'
 class usuario extends React.Component{
     
     constructor(props) {
@@ -115,8 +116,8 @@ class usuario extends React.Component{
             
             <Navbar alumnoid={this.props.params.alumno}></Navbar>
 
-            <div className="container">
-            <div className="row">
+            <div className="container dim_">
+            <div className="row sombras_ mt-5">
             <div className="col-12 p-5">
                 <form onSubmit={this.handleSubmit}>
                     <div class="form-row">

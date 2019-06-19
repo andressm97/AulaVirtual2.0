@@ -3,7 +3,7 @@ import './cursos.css';
 import swal from 'sweetalert';
 import Menu from './menu'
 import Navbar from './navbar'
-class cursos extends React.Component{
+class cursos extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,10 +25,10 @@ class cursos extends React.Component{
 
     componentWillMount() {
         let currentComponent = this;
-        let array=[];
+        let array = [];
         // let array2=[];
-        let i=0;
-        fetch('https://back-ihc.herokuapp.com/api/student?id='+this.props.params.alumnoid)
+        let i = 0;
+        fetch('https://back-ihc.herokuapp.com/api/student?id=' + this.props.params.alumnoid)
             .then(
 
                 function (response) {
@@ -53,10 +53,10 @@ class cursos extends React.Component{
                         i++;
                     });
 
-                   // console.log("este es "+array[1].id);
+                    // console.log("este es "+array[1].id);
                     currentComponent.setState({
                         cursos: array
-                        
+
                     })
 
                 })
@@ -64,17 +64,17 @@ class cursos extends React.Component{
                 console.log('Fetch Error :-S', err);
             });
 
-            fetch('https://back-ihc.herokuapp.com/api/course?id='+this.props.params.cursoid)
+        fetch('https://back-ihc.herokuapp.com/api/course?id=' + this.props.params.cursoid)
             .then(
 
                 function (response) {
                     return response.json();
                 }).then(function (data2) {
-                 
 
-                   console.log("datos: "+data2.programming.teachers[0].name);
+
+                    console.log("datos: " + data2.programming.teachers[0].name);
                     currentComponent.setState({
-                        pnombre:data2.programming.teachers[0].name,
+                        pnombre: data2.programming.teachers[0].name,
                         papellido: data2.programming.teachers[0].surname,
                         curso_i: data2.name
                     })
@@ -120,26 +120,22 @@ class cursos extends React.Component{
                 console.log('Fetch Error :-S', err);
             });
         // this.setState({value: event.target.files[0]});
-      }
-    
-      handleSubmit(event) {
+    }
+
+    handleSubmit(event) {
         // alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
-      }
-
-
-
-
-
-    
-    onClick=(e)=>{
-        swal("Enviado correctamente" ,"", "success");
     }
-    render(){
 
-        
+    onClick = (e) => {
+        swal("Enviado correctamente", "", "success");
+    }
 
-        return(
+    render() {
+
+
+
+        return (
 
             <div class="wrapper pr-1 pl-1">
             <Menu cursos={this.state.cursos} alumnoid={this.props.params.alumnoid}></Menu>
@@ -154,7 +150,7 @@ class cursos extends React.Component{
                  
                  </div>
 
-                 <div className="row m-2 fondocurso">
+                 <div className="row m-2 fondocurso sombras_">
                  <div className="col-12">
                   <p className="fuente-tamano">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue sapien ut faucibus rutrum. Cras semper pharetra libero quis laoreet. Sed eu consequat lectus, nec suscipit urna.</p>
 
@@ -167,7 +163,7 @@ class cursos extends React.Component{
                         
                         <div className="col-12 pl-5 pr-5">
                         <div id="accordion">
-                            <div class="card">
+                            <div class="card sombras_ mb-2">
                                 <div class="card-header" id="headingOne">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -176,11 +172,7 @@ class cursos extends React.Component{
                                     </h5>
                                 </div>
 
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                <div className="row">
-                                        <div className="col-12">
-                                             <a href="https://www.fceia.unr.edu.ar/ingsoft/testing-intro-a.pdf" target="_blank"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
+                        </div>
 
                                         </div>
                                         <div className="col-12">
@@ -201,8 +193,23 @@ class cursos extends React.Component{
                                 </div>
                                 </div>
                             </div>
+                            <div className="col-12 mt-3">
+                                <h5>Recursos</h5>
 
-                            <div class="card">
+                                <div className="row mb-4">
+
+                                    <div className="col-12 pl-5 pr-5">
+                                        <div id="accordion">
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                            <h6>semana 1: TEMA</h6>
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                            <div class="card sombras_ mb-2">
                                 <div class="card-header" id="headingDos">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
@@ -211,11 +218,14 @@ class cursos extends React.Component{
                                     </h5>
                                 </div>
 
-                                <div id="collapseDos" class="collapse" aria-labelledby="headingDos" data-parent="#accordion">
-                                <div class="card-body">
-                                <div className="row">
-                                        <div className="col-12">
-                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
+                                            <div class="card">
+                                                <div class="card-header" id="headingDos">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
+                                                            <h6>semana 2: TEMA</h6>
+                                                        </button>
+                                                    </h5>
+                                                </div>
 
                                         </div>
                                         <div className="col-12">
@@ -238,7 +248,7 @@ class cursos extends React.Component{
                                 </div>
                             </div>
                        
-                            <div class="card">
+                            <div class="card sombras_ mb-2">
                                 <div class="card-header" id="headingTres">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
@@ -247,11 +257,14 @@ class cursos extends React.Component{
                                     </h5>
                                 </div>
 
-                                <div id="collapseTres" class="collapse" aria-labelledby="headingTres" data-parent="#accordion">
-                                <div class="card-body">
-                                <div className="row">
-                                        <div className="col-12">
-                                             <a href="#"><i class="fas fa-file iconoArchivo"></i> Documento 1</a>
+                                            <div class="card">
+                                                <div class="card-header" id="headingTres">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
+                                                            <h6>semana 3: TEMA</h6>
+                                                        </button>
+                                                    </h5>
+                                                </div>
 
                                         </div>
                                         <div className="col-12">
@@ -274,7 +287,7 @@ class cursos extends React.Component{
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card sombras_ mb-2">
                                 <div class="card-header" id="headingCuatro">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCuatro" aria-expanded="true" aria-controls="collapseCuatro">
@@ -310,7 +323,7 @@ class cursos extends React.Component{
                                 </div>
                             </div>
 
-                            <div class="card">
+                            <div class="card sombras_ mb-2">
                                 <div class="card-header" id="headingCinco">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCinco" aria-expanded="false" aria-controls="collapseCinco">
@@ -377,19 +390,19 @@ class cursos extends React.Component{
   </div>
     
      */}
-    
-    </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
                         </div>
                     </div>
-
-
                 </div>
-                 
-                 
-                 
-                 </div>
-            </div>
-            </div>
             </div>
 
 

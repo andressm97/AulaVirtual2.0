@@ -41,9 +41,11 @@ a:focus{
     align-items: stretch;
 }
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #f2f2f2;
+    min-width: 350px;
+    max-width: 350px;
+    
+    background-image: linear-gradient(to right,#f2f2f2, #DBDBDB, #EAEAEA);
+
     color: black;
     transition: all 0.3s;
 }
@@ -78,7 +80,7 @@ a:focus{
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
+    color: #000;
     background: #e2e2e2;
 }
 a[data-toggle="collapse"] {
@@ -131,7 +133,10 @@ a.article:hover {
 }
 
 .menu-color{
-    background-color: #00A6FF;
+    
+    background-image: linear-gradient(to right,#00A6FF, #025a89);
+    
+   
     
 }
 
@@ -146,7 +151,7 @@ a.article:hover {
 }
 
 .imagen{
-    width: 180px;
+    width: 250px;
 }
 .icono{
     font-size: 20px;
@@ -156,3 +161,8 @@ a.article:hover {
 .mover{
     margin-left: 20px;
 }
+
+.fuentes{
+    font-family: 'Lobster Two', cursive;
+}
+
