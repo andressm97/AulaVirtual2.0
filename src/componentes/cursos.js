@@ -96,7 +96,7 @@ class cursos extends React.Component{
         data.append('file', file);
         data.append('id', this.props.params.cursoid);
 
-        fetch('http://localhost:8000/api/document/',{
+        fetch('http://back-ihc.herokuapp.com/api/document/',{
             // headers: h,
             method:'POST',
             body:data
