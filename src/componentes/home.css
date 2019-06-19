@@ -41,8 +41,8 @@ a:focus{
     align-items: stretch;
 }
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 350px;
+    max-width: 350px;
     background: #f2f2f2;
     color: black;
     transition: all 0.3s;
@@ -78,7 +78,7 @@ a:focus{
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
+    color: #000;
     background: #e2e2e2;
 }
 a[data-toggle="collapse"] {
@@ -131,7 +131,10 @@ a.article:hover {
 }
 
 .menu-color{
-    background-color: #00A6FF;
+    
+    background-image: linear-gradient(to right,#00A6FF, #025a89);
+    
+   
     
 }
 
