@@ -44,7 +44,7 @@ funcion(i){
         return(
             
             <div className="container">      
-            <h3 className="mt-3 mb-0">Tareas Pendientes</h3>
+            <h3 className="mt-3 mb-0 fuentes_titulos">Tareas Pendientes</h3>
             <h6 className="mt-0 mb-0 pt-0 mb-4">¿que tienes para hoy?</h6>
             <div className="row">
                        <div className="col-6">

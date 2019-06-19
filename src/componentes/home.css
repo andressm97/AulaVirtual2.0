@@ -43,7 +43,9 @@ a:focus{
 #sidebar {
     min-width: 350px;
     max-width: 350px;
-    background: #f2f2f2;
+    
+    background-image: linear-gradient(to right,#f2f2f2, #DBDBDB, #EAEAEA);
+
     color: black;
     transition: all 0.3s;
 }
@@ -149,7 +151,7 @@ a.article:hover {
 }
 
 .imagen{
-    width: 180px;
+    width: 250px;
 }
 .icono{
     font-size: 20px;
@@ -159,3 +161,8 @@ a.article:hover {
 .mover{
     margin-left: 20px;
 }
+
+.fuentes{
+    font-family: 'Lobster Two', cursive;
+}
+
