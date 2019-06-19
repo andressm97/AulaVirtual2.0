@@ -38,11 +38,13 @@ class navbar extends React.Component{
 
     }
 
-    render(){
-        return(
+class navbar extends React.Component {
+
+    render() {
+        return (
             <nav class="navbar navbar-expand-lg navbar-light mb-2 p-1 menu-color">
 
-                    {/* <button type="button" id="sidebarCollapse" class="btn btn-info">
+                {/* <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fa fa-align-justify"></i> <span>toggle sidebar</span>
             </button> */}
 
@@ -69,12 +71,12 @@ class navbar extends React.Component{
                                     {/* <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#">Something else here</a> */}
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                            
+                    </ul>
+                </div>
+            </nav>
 
-  
+
         )
     }
 }
