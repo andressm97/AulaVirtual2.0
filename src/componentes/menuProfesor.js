@@ -1,22 +1,13 @@
 import React from 'react';
-import Tareasycursos from './tareas-cursos';
+import Calendar from 'react-calendar';
+import './menu.css'
 
 class menuProfesor extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            onClickState: false
-        }
-
-        this.onClickCourse = this.onClickCourse.bind(this);
+    state = {
+        date: new Date(),
     }
-
-    onClickCourse = (e) => {
-        this.setState({
-            onClickState: true
-        });
-    }
+    onChange = date => this.setState({ date })
 
     render() {
         return (
@@ -32,7 +23,7 @@ class menuProfesor extends React.Component {
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mis cursos</a>
                             <ul className="collapse list-unstyled" id="homeSubmenu">
                                 <li>
-                                    <a href="" onClick={this.onClickCourse}>{this.props.cursos.course}</a>
+                                    <a href={"/cursop/" + this.props.cursos.courseId + "/" + this.props.cursos.teacherId}>{this.props.cursos.course}</a>
                                 </li>
                             </ul>
                         </li>
@@ -45,6 +36,10 @@ class menuProfesor extends React.Component {
                             <a href="#">Contactenos</a>
                         </li>
                     </ul>
+
+                    <div className="calendario m-1">
+                        <Calendar onChange={this.onChange} value={this.state.date} />
+                    </div>
                 </nav>
             </div>
         )
