@@ -38,7 +38,7 @@ class navbar extends React.Component{
 
     }
 
-class navbar extends React.Component {
+
 
     render() {
         return (
@@ -71,7 +71,7 @@ class navbar extends React.Component {
                                     {/* <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#">Something else here</a> */}
                                 </div>
-                            
+                            </li>
                     </ul>
                 </div>
             </nav>
@@ -80,4 +80,4 @@ class navbar extends React.Component {
         )
     }
 }
-export default navbar
+export default navbar;
